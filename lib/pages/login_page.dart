@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 class LoginPage extends StatefulWidget {
   final void Function()? onTap;
 
-
-  LoginPage({super.key, required this.onTap});
+  const LoginPage({super.key, required this.onTap});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -21,16 +20,19 @@ class _LoginPageState extends State<LoginPage> {
 
   void login() async {
     // show loading circle
-    showDialog(context: context, builder: (context)=> const Center( 
-      child: CircularProgressIndicator(),
-    ));
+    showDialog(
+        context: context,
+        builder: (context) => const Center(
+              child: CircularProgressIndicator(),
+            ));
 
     // try signin
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(email: emailController.text,password: passwordController.text);
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: emailController.text, password: passwordController.text);
 
-      if(context.mounted) Navigator.pop(context);
-    } on FirebaseAuthException catch(e) {
+      if (context.mounted) Navigator.pop(context);
+    } on FirebaseAuthException catch (e) {
       // pop the loading circle
       Navigator.pop(context);
 
