@@ -1,4 +1,4 @@
-import 'package:firebase_authentication/pages/login_oage.dart';
+import 'package:firebase_authentication/pages/login_page.dart';
 import 'package:firebase_authentication/theme/dark_mode.dart';
 import 'package:firebase_authentication/theme/light_mode.dart';
 import 'package:flutter/material.dart';
