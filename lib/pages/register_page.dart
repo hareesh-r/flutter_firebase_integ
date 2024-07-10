@@ -75,7 +75,7 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(height: 25),
               // app name
 
-              const Text("H A R E E S H", style: TextStyle(fontSize: 20)),
+              const Text("A U T H A P P", style: TextStyle(fontSize: 20)),
 
               const SizedBox(height: 50),
 
@@ -109,22 +109,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   controller: confirmPasswordController),
 
               const SizedBox(height: 10),
-              // forot passowrd
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    "Forgot Password?",
-                    style: TextStyle(
-                        color: Theme.of(context).colorScheme.secondary),
-                  )
-                ],
-              ),
-
-              const SizedBox(height: 25),
 
               // sign in button
-              CustomButton(text: "Login", onTap: register),
+              CustomButton(text: "Sign Up", onTap: register),
 
               const SizedBox(height: 25),
 
