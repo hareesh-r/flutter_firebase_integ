@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_authentication/components/my_drawer.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -14,6 +15,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         foregroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text("Home"),
+        elevation: 0,
         backgroundColor: Theme.of(context).colorScheme.surface,
         actions: [
           IconButton(
@@ -22,6 +24,7 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
+      drawer: CustomDrawer(),
     );
   }
 }
