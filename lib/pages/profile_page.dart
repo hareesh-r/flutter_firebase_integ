@@ -46,14 +46,18 @@ class ProfilePage extends StatelessWidget {
             // Data recieved
             else if (snapshot.hasData) {
               Map<String, dynamic>? user = snapshot.data!.data();
-
-              return Center(
-                child: Column(
-                  children: [
-                    Text(user!['email']),
-                    Text(user['username']),
-                  ],
-                ),
+              if (user != null) {
+                return Center(
+                  child: Column(
+                    children: [
+                      Text(user['email']),
+                      Text(user['username']),
+                    ],
+                  ),
+                );
+              }
+              return const Center(
+                child: Text("No data found"),
               );
             } else {
               return const Center(
