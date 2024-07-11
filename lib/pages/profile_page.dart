@@ -20,6 +20,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset : false,
       backgroundColor: Theme.of(context).colorScheme.surface,
       body: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
           future: getUserDetails(),
@@ -72,12 +73,12 @@ class ProfilePage extends StatelessWidget {
                       const SizedBox(height: 25,),
 
                       // username
-                      Text(user!['username'].toString().toUpperCase(), style: const TextStyle( fontSize: 24, fontWeight: FontWeight.bold,)),
+                      Text(user['username'].toString().toUpperCase(), style: const TextStyle( fontSize: 24, fontWeight: FontWeight.bold,)),
 
                       const SizedBox(height: 10),
 
                       // email
-                      Text(user!['email'], style: TextStyle( color: Theme.of(context).colorScheme.secondary)),
+                      Text(user['email'], style: TextStyle( color: Theme.of(context).colorScheme.secondary)),
                     ],
                   ),
                 );

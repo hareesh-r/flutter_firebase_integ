@@ -15,7 +15,7 @@ class CustomTextField extends StatelessWidget {
     return TextField(
       controller: controller,
       obscureText: obscureText,
-      style: TextStyle(fontSize: 16, color: Theme.of(context).colorScheme.primary),
+      style: TextStyle(fontSize: 16, color: Theme.of(context).colorScheme.inversePrimary),
       decoration: InputDecoration(
           hintText: hintText,
           hintStyle: TextStyle(fontSize: 16, color: Theme.of(context).colorScheme.secondary),

@@ -30,6 +30,7 @@ class HomePage extends StatelessWidget {
     }
 
     return Scaffold(
+      resizeToAvoidBottomInset : false,
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
         title: const Text("W A L L"),
