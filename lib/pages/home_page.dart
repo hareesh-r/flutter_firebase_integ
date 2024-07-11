@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
       resizeToAvoidBottomInset : false,
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
-        title: const Text("W A L L"),
+        title: const Text("M I N I M A L  F E E D"),
         elevation: 0,
         backgroundColor: Colors.transparent,
         foregroundColor: Theme.of(context).colorScheme.inversePrimary,
