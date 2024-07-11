@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_authentication/components/my_back_button.dart';
+import 'package:firebase_authentication/components/my_custom_tile.dart';
 import 'package:firebase_authentication/helper/helper_functions.dart';
 import 'package:flutter/material.dart';
 
@@ -55,10 +56,10 @@ class UserPage extends StatelessWidget {
                       // get individual user
                       final user = users[index];
 
-                      return ListTile(
-                        title: Text(user['username'], style: TextStyle( color: Theme.of(context).colorScheme.inversePrimary),),
-                        subtitle: Text(user['email'], style: TextStyle( color: Theme.of(context).colorScheme.inversePrimary),),
-                      );
+                      String email = user['email'];
+                      String username = user['username'];
+
+                      return CustomListTile(title: email,subTitle: username);
                     },
                   ),
                 ),
