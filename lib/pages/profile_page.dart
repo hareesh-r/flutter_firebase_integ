@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_authentication/components/my_back_button.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -19,12 +20,6 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Profile"),
-        elevation: 0,
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        foregroundColor: Theme.of(context).colorScheme.surface,
-      ),
       backgroundColor: Theme.of(context).colorScheme.surface,
       body: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
           future: getUserDetails(),
@@ -49,9 +44,40 @@ class ProfilePage extends StatelessWidget {
               if (user != null) {
                 return Center(
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(user['email']),
-                      Text(user['username']),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 50,left: 25),
+                        child: Row(
+                          children: [
+                            CustomBackButton()
+                          ],
+                        ),
+                      ),
+
+                      const SizedBox(height: 25,),
+
+
+                      // profile pic 
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.primary,
+                          borderRadius: BorderRadius.circular(24),
+                        ),
+                        padding: const EdgeInsets.all(25),
+                        child: const Icon(Icons.person, size: 64,),
+
+                      ),
+
+                      const SizedBox(height: 25,),
+
+                      // username
+                      Text(user!['username'].toString().toUpperCase(), style: const TextStyle( fontSize: 24, fontWeight: FontWeight.bold,)),
+
+                      const SizedBox(height: 10),
+
+                      // email
+                      Text(user!['email'], style: TextStyle( color: Theme.of(context).colorScheme.secondary)),
                     ],
                   ),
                 );
